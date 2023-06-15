@@ -17,14 +17,22 @@ export default class Counter extends Component {
     });
   }
   onChangeName(event){
+   
     this.setState({
         name:event.target.value
     });
   }
-  onClickSave(){ 
+  onClickSave(){
+    if(this.state.name==="")
+    {
+      alert("Empty data cannot be saved !");
+    }
+    else{ 
     this.setState({
         data:[...this.state.data,{sn:this.state.data.length+1,name:this.state.name}]
+    
     });
+  }
   }
   
   render() {
